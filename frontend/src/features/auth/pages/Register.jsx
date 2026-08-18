@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/useAuth'
 const Register = () => {
 
     const navigate = useNavigate()
-    const [ username, setUsername ] = useState("")
+    const [ name, setName ] = useState("")
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
 
@@ -13,7 +13,7 @@ const Register = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await handleRegister({username,email,password})
+        await handleRegister({name,email,password})
         navigate("/")
     }
 
@@ -29,10 +29,10 @@ const Register = () => {
                 <form onSubmit={handleSubmit}>
 
                     <div className="input-group">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="name">Name</label>
                         <input
-                            onChange={(e) => { setUsername(e.target.value) }}
-                            type="text" id="username" name='username' placeholder='Enter username' />
+                            onChange={(e) => { setName(e.target.value) }}
+                            type="text" id="name" name='name' placeholder='Enter name' />
                     </div>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
