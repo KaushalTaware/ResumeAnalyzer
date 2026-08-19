@@ -11,7 +11,8 @@ const app  = express()
 app.use(cors({
      origin: [
         "http://localhost:5173",
-        "https://resume-analyzer-neon-seven.vercel.app/"
+        "https://resume-analyzer-neon-seven.vercel.app/",
+        "https://resume-analyzer-geupe5129-kaushal-taware-s-projects.vercel.app"
     ],
     credentials: true
 }))
