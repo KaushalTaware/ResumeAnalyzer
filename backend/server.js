@@ -9,7 +9,10 @@ import cors from "cors";
 connectDB()
 const app  = express()
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+     origin: [
+        "http://localhost:5173",
+        "https://your-frontend.vercel.app"
+    ],
     credentials: true
 }))
 
