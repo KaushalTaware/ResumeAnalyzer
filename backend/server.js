@@ -9,7 +9,7 @@ import cors from "cors";
 connectDB()
 const app  = express()
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }))
 
@@ -18,6 +18,6 @@ app.use(cookieParser())
 app.use("/api/auth",authrouter)
 app.use("/api/interview", interviewRouter)
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
