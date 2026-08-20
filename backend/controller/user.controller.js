@@ -1,5 +1,5 @@
 import User from "../models/user.model.js";
-import TokenBlacklist from "../models/tokenBlacklist.model.js";
+import TokenBlackList from "../models/tokenBlackList.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -60,7 +60,7 @@ export const loginUser = async (req, res) => {
 export const logoutUser = async (req, res) => {
     const token = req.cookies.token;
     if(token){
-        await tokenBlacklist.create({token})
+        await TokenBlackList.create({token})
     }
     res.clearCookie("token", {
     httpOnly: true,
